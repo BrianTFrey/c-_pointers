@@ -1,0 +1,35 @@
+// Brian Frey
+//Lab 02
+//CoSci 540
+#include <iostream>
+using namespace std;
+
+int main() {
+const int MAX = 5;
+int even[MAX] = { 10, 20, 30, 40, 50 };
+int odd[MAX] = { 15, 25, 35, 45, 55 };
+int subtotal = 0;
+int* ptr = even;
+int* ptrs[MAX];
+
+for (int i = 0; i < MAX; i++) {
+ ptr = &even[i];
+ cout << "*ptr: " << *ptr << endl;
+ subtotal += *ptr;
+}
+cout << "sum: " << subtotal << endl << endl;
+subtotal = 0;
+
+for (int i = 0; i < MAX; i++) {
+ ptrs[i] = &odd[MAX -1- i];
+}
+
+for (int i = 0; i < MAX; i++) {
+ cout << "*ptrs[" << i << "]: " << *ptrs[i] << endl;
+ subtotal += *ptrs[i];
+}
+cout << "sum: " << subtotal << endl;
+
+system("pause");
+return 0;
+ }
